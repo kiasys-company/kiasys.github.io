@@ -1,274 +1,324 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Киасис — интеллектуальная система анализа композиционных покрытий</title>
 
-/* Стеклянная шапка */
-.glass-header {
-  position: fixed;
-  inset-inline: 0;
-  top: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 0.9rem 1.5rem;
-  max-width: 80rem;
-  margin-inline: auto;
-  margin-top: 0.8rem;
-  border-radius: 999px;
-  background: radial-gradient(circle at top left, rgba(79,70,229,0.9), rgba(15,23,42,0.92));
-  border: 1px solid rgba(148,163,184,0.4);
-  box-shadow: 0 18px 45px rgba(15,23,42,0.8);
-  backdrop-filter: blur(18px);
-}
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-@media (max-width: 768px) {
-  .glass-header {
-    border-radius: 18px;
-    margin-inline: 1rem;
-    padding-inline: 1.1rem;
-  }
-}
+  <!-- Кастомные стили -->
+  <link rel="stylesheet" href="styles.css" />
 
-/* Логотип */
-.logo-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 0, #f97316, #ec4899 40%, #4f46e5 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 35px rgba(236,72,153,0.9);
-}
-.logo-letter {
-  font-weight: 800;
-  font-size: 1.1rem;
-  color: #0b1020;
-}
+  <link rel="icon" type="image/png" href="assets/favicon.ico" />
+  <meta name="description" content="Киасис — интеллектуальная система автоматизированного анализа микроструктуры и поддержки принятия решений для управления качеством композиционных покрытий в промышленности." />
+</head>
+<body class="bg-slate-950 text-slate-50">
+  <!-- Шапка -->
+  <header class="glass-header">
+    <div class="flex items-center gap-3">
+      <div class="logo-circle">
+        <span class="logo-letter">K</span>
+      </div>
+      <div>
+        <div class="font-semibold tracking-wide text-slate-50">Киасис</div>
+        <div class="text-xs text-slate-300">Интеллектуальный анализ и поддержка решений</div>
+      </div>
+    </div>
 
-/* Навигация */
-.nav-link {
-  position: relative;
-  color: #e5e7eb;
-  text-decoration: none;
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.3rem;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #38bdf8, #a855f7, #f97316);
-  border-radius: 999px;
-  transition: width 0.18s ease-out;
-}
-.nav-link:hover::after {
-  width: 100%;
-}
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#hero" class="nav-link">Главная</a>
+      <a href="#for-whom" class="nav-link">Для кого</a>
+      <a href="#features" class="nav-link">Возможности</a>
+      <a href="#workflow" class="nav-link">Как работает</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+    </nav>
 
-/* Фоновая «сетка» */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(circle at top, rgba(79,70,229,0.45), transparent 55%),
-    radial-gradient(circle at bottom, rgba(8,47,73,0.9), #020617 70%);
-  opacity: 1;
-}
+    <a href="#contacts" class="hidden md:inline-flex px-3 py-1.5 text-xs rounded-full border border-violet-400/80 bg-violet-500/10 hover:bg-violet-500/20 transition">
+      Получить презентацию
+    </a>
+  </header>
 
-/* Кнопки */
-.btn-primary {
-  @apply inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium;
-  background: linear-gradient(135deg, #4f46e5, #ec4899);
-  color: #f9fafb;
-  border: 1px solid rgba(191,219,254,0.35);
-  box-shadow: 0 12px 35px rgba(79,70,229,0.7);
-  text-decoration: none;
-  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
-}
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 45px rgba(79,70,229,0.9);
-}
+  <main class="relative overflow-hidden">
+    <!-- Фоновая сетка/градиент -->
+    <div class="bg-grid"></div>
 
-.btn-ghost {
-  @apply inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium;
-  background: rgba(15,23,42,0.7);
-  border: 1px solid rgba(148,163,184,0.6);
-  color: #e5e7eb;
-  text-decoration: none;
-}
+    <!-- HERO -->
+    <section id="hero" class="relative pt-32 pb-20 px-4 sm:px-8 max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Текст -->
+        <div class="space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/60 bg-emerald-500/10 text-xs text-emerald-100 mb-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Интеллектуальный анализ · Композиционные покрытия · Компьютерное зрение
+          </div>
 
-/* Точки и карточки */
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: radial-gradient(circle, #22c55e, #15803d);
-  box-shadow: 0 0 14px rgba(34,197,94,0.9);
-}
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Интеллектуальная система <span class="text-violet-300">анализа покрытий</span> и поддержки решений
+          </h1>
 
-.hero-card {
-  background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(15,23,42,0.98));
-  border-radius: 1.5rem;
-  padding: 1.8rem 1.6rem;
-  border: 1px solid rgba(148,163,184,0.45);
-  box-shadow: 0 22px 55px rgba(15,23,42,0.95);
-}
+          <p class="text-sm sm:text-base text-slate-200/80 max-w-xl">
+            «Киасис» объединяет компьютерное зрение, цифровые модели технологического процесса
+            и модуль поддержки принятия решений, чтобы помочь инженерам стабильно получать
+            композиционные покрытия с заданными структурными и эксплуатационными характеристиками.
+          </p>
 
-.step-row {
-  display: flex;
-  gap: 0.7rem;
-  align-items: flex-start;
-}
-.step-pill {
-  flex-shrink: 0;
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #22c55e, #a3e635);
-  color: #0b1020;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
+          <div class="flex flex-wrap gap-3">
+            <a href="#features" class="btn-primary">Посмотреть возможности</a>
+            <a href="#workflow" class="btn-ghost">Как встроить в производство</a>
+          </div>
 
-/* Стандартные секции и карточки */
-.section {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-.section-inner {
-  max-width: 72rem;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-.section-title {
-  font-size: 1.7rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  margin-bottom: 0.5rem;
-}
-.section-subtitle {
-  font-size: 0.95rem;
-  color: rgba(226,232,240,0.82);
-}
+          <div class="flex flex-wrap gap-4 pt-2 text-xs text-slate-300/90">
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Автоматизированный анализ микроструктуры (SEM/оптика)
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Раннее выявление дефектов композиционных покрытий
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Отчёты для техслужб, лабораторий и контроля качества
+            </div>
+          </div>
+        </div>
 
-.card {
-  background: rgba(15,23,42,0.88);
-  border-radius: 1.1rem;
-  padding: 1.2rem 1.3rem;
-  border: 1px solid rgba(148,163,184,0.5);
-  box-shadow: 0 16px 40px rgba(15,23,42,0.9);
-}
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-.card-text {
-  font-size: 0.9rem;
-  color: rgba(226,232,240,0.86);
-}
+        <!-- Карточка-схема -->
+        <div class="relative">
+          <div class="hero-card">
+            <div class="text-xs uppercase tracking-wide text-slate-300/80 mb-3">
+              Цепочка «Производство → Микроструктура → Решение»
+            </div>
+            <div class="space-y-4 text-sm">
+              <div class="step-row">
+                <span class="step-pill">1</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Загрузка изображений покрытия</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Электронная и оптическая микроскопия, шлифы, поперечные и продольные сечения.
+                  </div>
+                </div>
+              </div>
 
-/* Блок возможностей */
-.feature-block h3 {
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-.feature-block ul {
-  padding-left: 1.1rem;
-  margin: 0;
-}
-.feature-block li {
-  margin-bottom: 0.25rem;
-}
+              <div class="step-row">
+                <span class="step-pill">2</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Анализ дефектов и структуры</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Пористость, трещины, дефекты связности, граница раздела, фазовый состав и другие показатели.
+                  </div>
+                </div>
+              </div>
 
-/* Workflow */
-.wf-step {
-  background: rgba(15,23,42,0.88);
-  border-radius: 0.9rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid rgba(148,163,184,0.5);
-}
-.wf-step-number {
-  font-size: 0.75rem;
-  color: #a5b4fc;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 0.1rem;
-}
+              <div class="step-row">
+                <span class="step-pill">3</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Цифровой двойник производственного процесса</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Связь «параметры технологического процесса → структура покрытия → эксплуатационные характеристики».
+                  </div>
+                </div>
+              </div>
 
-/* Контактная форма */
-.contact-form {
-  background: rgba(15,23,42,0.94);
-  border-radius: 1.1rem;
-  padding: 1.3rem 1.4rem;
-  border: 1px solid rgba(148,163,184,0.55);
-}
-.form-label {
-  display: block;
-  font-size: 0.8rem;
-  color: rgba(203,213,225,0.9);
-  margin-bottom: 0.25rem;
-}
-.form-input {
-  width: 100%;
-  border-radius: 0.6rem;
-  border: 1px solid rgba(148,163,184,0.7);
-  background: rgba(15,23,42,0.8);
-  color: #e5e7eb;
-  font-size: 0.85rem;
-  padding: 0.45rem 0.6rem;
-}
-.form-input:focus {
-  outline: none;
-  border-color: #a855f7;
-  box-shadow: 0 0 0 1px rgba(168,85,247,0.7);
-}
+              <div class="step-row">
+                <span class="step-pill">4</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Рекомендации СППР</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Методы многокритериальной оптимизации (например, TOPSIS) для подбора режимов и оценки сценариев.
+                  </div>
+                </div>
+              </div>
+            </div>
 
-/* Плавающие «орбиты» */
-.floating-orbit {
-  position: absolute;
-  border-radius: 999px;
-  border: 1px solid rgba(129,140,248,0.45);
-  box-shadow: 0 0 40px rgba(59,130,246,0.8);
-  opacity: 0.6;
-}
-.orbit-1 {
-  width: 180px;
-  height: 180px;
-  top: 5%;
-  right: -6%;
-  animation: float 14s ease-in-out infinite;
-}
-.orbit-2 {
-  width: 230px;
-  height: 230px;
-  bottom: -8%;
-  left: -4%;
-  animation: float 18s ease-in-out infinite;
-}
+            <div class="mt-5 grid grid-cols-2 gap-3 text-[11px] text-slate-200/90">
+              <div class="stat-box">
+                <div class="text-[10px] uppercase text-slate-400">Параметры процесса</div>
+                <div>скорость обработки, расход материала, температура, давление, параметры движения оборудования.</div>
+              </div>
+              <div class="stat-box">
+                <div class="text-[10px] uppercase text-slate-400">Цели качества</div>
+                <div>пористость &lt; X%, требуемый фазовый состав, адгезия ≥ Z МПа, стабильность по партии.</div>
+              </div>
+            </div>
+          </div>
 
-/* Футер */
-.footer {
-  padding: 1.2rem 1.4rem 1.8rem;
-  font-size: 0.75rem;
-  color: rgba(148,163,184,0.85);
-  text-align: center;
-}
+          <!-- Немного неоново-сеточного фона -->
+          <div class="floating-orbit orbit-1"></div>
+          <div class="floating-orbit orbit-2"></div>
+        </div>
+      </div>
+    </section>
 
-/* Анимация */
-@keyframes float {
-  0%   { transform: translate3d(0,0,0); }
-  50%  { transform: translate3d(6px,-14px,0); }
-  100% { transform: translate3d(0,0,0); }
-}
+    <!-- Блок с логотипами и поддержкой ФСИ -->
+    <section class="section pt-0">
+      <div class="section-inner">
+        <div class="card flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <div class="flex items-center gap-4 md:gap-6">
+            <!-- Замените пути к логотипам на реальные файлы -->
+            <img src="assets/logo-fasie.svg" alt="Фонд содействия инновациям" class="h-10 md:h-12 w-auto" />
+            <img src="assets/logo-platforma-utp.svg" alt="Платформа университетского технологического предпринимательства" class="h-10 md:h-12 w-auto" />
+          </div>
+          <p class="text-xs sm:text-sm text-slate-200/90 text-center md:text-left">
+            Проект реализован при поддержке Фонда содействия инновациям в рамках программы
+            «Студенческий стартап» мероприятия «Платформа университетского технологического
+            предпринимательства» федерального проекта «Технологии».
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Для кого -->
+    <section id="for-whom" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Для кого создаётся Киасис</h2>
+        <p class="section-subtitle">
+          Система разрабатывается как инструмент для команд, которые отвечают за качество покрытий
+          и управление технологическими режимами в промышленности.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="card">
+            <h3 class="card-title">Производственные отделы</h3>
+            <p class="card-text">
+              Поддержка инженеров-технологов при подборе и контроле технологических режимов,
+              анализ стабильности процесса, сценарии «что-если» при изменении параметров.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Лаборатории и НИОКР</h3>
+            <p class="card-text">
+              Автоматизация обработки микроструктурных снимков, единая база экспериментов,
+              сопоставление структуры и свойств композиционных покрытий.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Инжиниринговые компании</h3>
+            <p class="card-text">
+              Встраивание Киасис в комплексные решения по цифровым двойникам, «умным» цехам и
+              системам мониторинга состояния изделий.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Возможности -->
+    <section id="features" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Ключевые возможности системы</h2>
+        <div class="grid md:grid-cols-2 gap-6 mt-8 text-sm">
+          <div class="feature-block">
+            <h3>Анализ изображений покрытия</h3>
+            <ul>
+              <li>выделение области покрытия и границы раздела;</li>
+              <li>оценка пористости, толщины слоёв, дефектов связности;</li>
+              <li>поиск локальных дефектов (трещины, неполное спекание, включения);</li>
+              <li>формирование карт дефектов и сводных метрик.</li>
+            </ul>
+          </div>
+          <div class="feature-block">
+            <h3>Цифровые модели и СППР</h3>
+            <ul>
+              <li>регрессионные модели и метамодели для связи параметров технологического процесса и структуры покрытия;</li>
+              <li>многокритериальная оптимизация (TOPSIS и другие критерии);</li>
+              <li>сценарный анализ «качество ↔ параметры процесса»;</li>
+              <li>генерация рекомендаций по корректировке параметров технологического процесса.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Как работает -->
+    <section id="workflow" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Как внедрить Киасис в практику</h2>
+        <div class="grid lg:grid-cols-4 gap-4 text-xs sm:text-sm mt-6">
+          <div class="wf-step">
+            <div class="wf-step-number">01</div>
+            <h3>Диагностика</h3>
+            <p>Совместно описываем текущий технологический процесс формирования покрытий, парк оборудования и формат данных.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">02</div>
+            <h3>Сбор данных</h3>
+            <p>Формируем набор изображений, протоколы режимов, результаты испытаний покрытий и контрольных измерений.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">03</div>
+            <h3>Обучение моделей</h3>
+            <p>Настраиваем алгоритмы анализа изображений и цифровые модели технологического процесса.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">04</div>
+            <h3>Пилот и интеграция</h3>
+            <p>Тестируем систему на реальных данных, настраиваем интерфейс и отчётные формы под ваш регламент.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="section pb-24">
+      <div class="section-inner">
+        <h2 class="section-title">Связаться по проекту Киасис</h2>
+        <p class="section-subtitle max-w-2xl">
+          Если вы хотите обсудить пилотный проект, интеграцию в существующую инфраструктуру или
+          совместные исследования, оставьте заявку.
+        </p>
+        <div class="mt-8 grid md:grid-cols-[2fr,1.5fr] gap-8">
+          <form class="contact-form">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="form-label">Имя / организация</label>
+                <input class="form-input" type="text" placeholder="НПП «Пример», отдел покрытий" />
+              </div>
+              <div>
+                <label class="form-label">E-mail</label>
+                <input class="form-input" type="email" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label class="form-label">Комментарий</label>
+              <textarea class="form-input h-28" placeholder="Кратко опишите задачу, тип покрытий и оборудование, с которым вы работаете."></textarea>
+            </div>
+            <button type="button" class="btn-primary mt-5 w-full sm:w-auto">
+              Отправить запрос
+            </button>
+            <p class="text-[11px] text-slate-400 mt-2">
+              * Форма сейчас демонстрационная. Для связи можно написать на e-mail, указанный ниже.
+            </p>
+          </form>
+
+          <div class="space-y-4 text-sm text-slate-200/90">
+            <div class="card">
+              <h3 class="card-title">Контакты</h3>
+              <p>Напишите на e-mail, если у вас возникли вопросы или есть идеи для пилотного проекта.</p>
+              <p class="mt-2">
+                <span class="text-slate-400">E-mail:</span> kiasys.company@yandex.ru
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Статус проекта</h3>
+              <p>
+                Проект реализуется в рамках программы «Студенческий стартап» Фонда содействия инновациям
+                и находится на этапе разработки и апробации прототипа в условиях реального производства.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Киасис. Интеллектуальный анализ и поддержка принятия решений для композиционных покрытий.</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
