@@ -165,12 +165,15 @@
     <!-- Блок с логотипами и поддержкой ФСИ -->
 <section class="section pt-0">
   <div class="section-inner">
-    <div class="card flex flex-col md:flex-row items-center gap-6 md:gap-8">
-      <div class="flex items-center gap-4 md:gap-6">
+    <div class="card md:grid md:grid-cols-[auto,minmax(0,1fr)] md:items-center gap-4 md:gap-6">
+      <!-- Логотипы слева -->
+      <div class="flex items-center gap-4 md:gap-6 flex-shrink-0">
         <img src="assets/logo-fasie.svg" alt="Фонд содействия инновациям" class="h-10 md:h-12 w-auto" />
         <img src="assets/logo-platforma-utp.svg" alt="Платформа университетского технологического предпринимательства" class="h-10 md:h-12 w-auto" />
       </div>
-      <p class="text-xs sm:text-sm text-slate-200/90 text-center md:text-left">
+
+      <!-- Текст справа -->
+      <p class="mt-2 md:mt-0 text-xs sm:text-sm text-slate-200/90 text-center md:text-left md:pl-4">
         Проект реализован при поддержке Фонда содействия инновациям в рамках программы
         «Студенческий стартап» мероприятия «Платформа университетского технологического
         предпринимательства» федерального проекта «Технологии».
@@ -178,6 +181,7 @@
     </div>
   </div>
 </section>
+
 
 
     <!-- Для кого -->
