@@ -22,17 +22,18 @@ body {
   box-shadow: 0 18px 45px rgba(15,23,42,0.8);
   backdrop-filter: blur(18px);
 }
-/* Логотип в шапке */
+/* Логотип в шапке с светлым фоном */
 .logo-img-wrapper {
-  width: 42px;            /* Можно увеличить 42–56px при необходимости */
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 0, #76B8C3, #114F5F 70%);
+  background: #ffffff;
+  border: 1px solid rgba(148,163,184,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 28px rgba(118,184,195,0.65);
-  padding: 6px;           /* чтобы SVG не касался краёв */
+  box-shadow: 0 0 22px rgba(148,163,184,0.7);
+  padding: 6px; /* чтобы логотип не прилипал к краю */
 }
 
 .logo-img {
