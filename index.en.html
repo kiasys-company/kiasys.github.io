@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KiaSys — intelligent analysis of composite coatings</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" type="image/png" href="assets/favicon.ico" />
+  <meta name="description" content="KiaSys is an intelligent system for automated microstructure analysis and decision support for quality control of composite coatings in industry." />
+</head>
+<body class="bg-slate-950 text-slate-50">
+  <!-- Header -->
+  <header class="glass-header">
+    <div class="flex items-center gap-3">
+      <div class="logo-circle">
+        <span class="logo-letter">K</span>
+      </div>
+      <div>
+        <div class="font-semibold tracking-wide text-slate-50">KiaSys</div>
+        <div class="text-xs text-slate-300">Intelligent analysis & decision support</div>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#for-whom" class="nav-link">Who it's for</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#workflow" class="nav-link">How it works</a>
+      <a href="#contacts" class="nav-link">Contacts</a>
+    </nav>
+
+    <a href="#contacts" class="hidden md:inline-flex px-3 py-1.5 text-xs rounded-full border border-violet-400/80 bg-violet-500/10 hover:bg-violet-500/20 transition">
+      Request a presentation
+    </a>
+  </header>
+
+  <main class="relative overflow-hidden">
+    <!-- Background grid / gradient -->
+    <div class="bg-grid"></div>
+
+    <!-- HERO -->
+    <section id="hero" class="relative pt-32 pb-20 px-4 sm:px-8 max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-400/60 bg-emerald-500/10 text-xs text-emerald-100 mb-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Intelligent analysis · Composite coatings · Computer vision
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Intelligent <span class="text-violet-300">coating analysis</span> and decision support system
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-200/80 max-w-xl">
+            KiaSys combines computer vision, digital models of the manufacturing process
+            and a decision support module to help engineers consistently achieve composite coatings
+            with the required structural and performance characteristics.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="#features" class="btn-primary">Explore features</a>
+            <a href="#workflow" class="btn-ghost">How to integrate into your plant</a>
+          </div>
+
+          <div class="flex flex-wrap gap-4 pt-2 text-xs text-slate-300/90">
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Automated microstructure analysis (SEM / optical)
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Early detection of defects in composite coatings
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="dot"></div>
+              Reports for QA teams, labs and technical services
+            </div>
+          </div>
+        </div>
+
+        <!-- Card / scheme -->
+        <div class="relative">
+          <div class="hero-card">
+            <div class="text-xs uppercase tracking-wide text-slate-300/80 mb-3">
+              Chain “Production → Microstructure → Decision”
+            </div>
+            <div class="space-y-4 text-sm">
+              <div class="step-row">
+                <span class="step-pill">1</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Upload coating images</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Electron and optical microscopy, cross-sections and longitudinal sections.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-row">
+                <span class="step-pill">2</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Defect and structure analysis</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Porosity, cracks, bonding defects, interface quality, phase composition and other indicators.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-row">
+                <span class="step-pill">3</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Digital twin of the process</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Linking “process parameters → coating structure → performance characteristics”.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-row">
+                <span class="step-pill">4</span>
+                <div>
+                  <div class="font-semibold text-slate-50">Decision support</div>
+                  <div class="text-slate-300/80 text-xs">
+                    Multi-criteria optimization methods (e.g. TOPSIS) to select regimes and evaluate scenarios.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 grid grid-cols-2 gap-3 text-[11px] text-slate-200/90">
+              <div class="stat-box">
+                <div class="text-[10px] uppercase text-slate-400">Process parameters</div>
+                <div>processing speed, material feed rate, temperature, pressure, equipment motion parameters.</div>
+              </div>
+              <div class="stat-box">
+                <div class="text-[10px] uppercase text-slate-400">Quality targets</div>
+                <div>porosity &lt; X%, required phase composition, adhesion ≥ Z MPa, batch-to-batch stability.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Neon / orbit background -->
+          <div class="floating-orbit orbit-1"></div>
+          <div class="floating-orbit orbit-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos and FASIE support block -->
+    <section class="section pt-0">
+      <div class="section-inner">
+        <div class="card flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <div class="flex items-center gap-4 md:gap-6">
+            <!-- Replace with actual logo paths -->
+            <img src="assets/logo-fasie.svg" alt="Foundation for Assistance to Innovations (FASIE)" class="h-10 md:h-12 w-auto" />
+            <img src="assets/logo-platforma-utp.svg" alt="University Technological Entrepreneurship Platform" class="h-10 md:h-12 w-auto" />
+          </div>
+          <p class="text-xs sm:text-sm text-slate-200/90 text-center md:text-left">
+            The project is implemented with the support of the Foundation for Assistance to Innovations
+            under the “Student Startup” program within the “University Technological Entrepreneurship Platform”
+            initiative of the federal project “Technologies”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- For whom -->
+    <section id="for-whom" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Who is KiaSys for</h2>
+        <p class="section-subtitle">
+          KiaSys is developed as a tool for teams responsible for coating quality and process control in industrial settings.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="card">
+            <h3 class="card-title">Production departments</h3>
+            <p class="card-text">
+              Support for process engineers in selecting and monitoring process regimes,
+              analyzing process stability and exploring “what-if” scenarios when parameters change.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Laboratories & R&amp;D</h3>
+            <p class="card-text">
+              Automated processing of microstructure images, unified experiment database
+              and correlation of coating structure with performance properties.
+            </p>
+          </div>
+          <div class="card">
+            <h3 class="card-title">Engineering companies</h3>
+            <p class="card-text">
+              Integrating KiaSys into comprehensive solutions for digital twins, smart shops
+              and condition monitoring systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">Key system features</h2>
+        <div class="grid md:grid-cols-2 gap-6 mt-8 text-sm">
+          <div class="feature-block">
+            <h3>Coating image analysis</h3>
+            <ul>
+              <li>segmentation of the coating area and interface boundary;</li>
+              <li>evaluation of porosity, layer thicknesses and bonding defects;</li>
+              <li>detection of local defects (cracks, incomplete bonding, inclusions);</li>
+              <li>generation of defect maps and summary metrics.</li>
+            </ul>
+          </div>
+          <div class="feature-block">
+            <h3>Digital models & decision support</h3>
+            <ul>
+              <li>regression models and metamodels linking process parameters and coating structure;</li>
+              <li>multi-criteria optimization (TOPSIS and other criteria);</li>
+              <li>scenario analysis of “quality ↔ process parameters” trade-offs;</li>
+              <li>generation of recommendations for process parameter adjustments.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="workflow" class="section">
+      <div class="section-inner">
+        <h2 class="section-title">How to implement KiaSys in practice</h2>
+        <div class="grid lg:grid-cols-4 gap-4 text-xs sm:text-sm mt-6">
+          <div class="wf-step">
+            <div class="wf-step-number">01</div>
+            <h3>Diagnostics</h3>
+            <p>We jointly describe your current coating process, equipment fleet and data formats.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">02</div>
+            <h3>Data collection</h3>
+            <p>We assemble image datasets, process protocols, coating test results and inspection data.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">03</div>
+            <h3>Model training</h3>
+            <p>We configure image analysis algorithms and digital models of the technological process.</p>
+          </div>
+          <div class="wf-step">
+            <div class="wf-step-number">04</div>
+            <h3>Pilot & integration</h3>
+            <p>We test the system on real data and adapt the interface and reporting to your internal regulations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="section pb-24">
+      <div class="section-inner">
+        <h2 class="section-title">Contact us about KiaSys</h2>
+        <p class="section-subtitle max-w-2xl">
+          If you would like to discuss a pilot project, integration into your existing infrastructure,
+          or joint research, feel free to leave a request.
+        </p>
+        <div class="mt-8 grid md:grid-cols-[2fr,1.5fr] gap-8">
+          <form class="contact-form">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="form-label">Name / organization</label>
+                <input class="form-input" type="text" placeholder="Example R&amp;D, coating department" />
+              </div>
+              <div>
+                <label class="form-label">E-mail</label>
+                <input class="form-input" type="email" placeholder="you@example.com" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label class="form-label">Message</label>
+              <textarea class="form-input h-28" placeholder="Briefly describe your task, coating types and equipment you work with."></textarea>
+            </div>
+            <button type="button" class="btn-primary mt-5 w-full sm:w-auto">
+              Send request
+            </button>
+            <p class="text-[11px] text-slate-400 mt-2">
+              * The form is currently a demo. You can also reach us directly via the e-mail below.
+            </p>
+          </form>
+
+          <div class="space-y-4 text-sm text-slate-200/90">
+            <div class="card">
+              <h3 class="card-title">Contacts</h3>
+              <p>If you have questions or ideas for a pilot project, feel free to reach out by e-mail.</p>
+              <p class="mt-2">
+                <span class="text-slate-400">E-mail:</span> kiasys.company@yandex.ru
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Project status</h3>
+              <p>
+                The project is supported by the “Student Startup” program of the Foundation for Assistance to Innovations
+                and is currently at the stage of prototype development and validation on real industrial data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> KiaSys. Intelligent analysis and decision support for composite coatings.</span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
