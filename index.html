@@ -35,6 +35,12 @@
       opacity: 0.8;
       margin-bottom: 1.4rem;
     }
+    .buttons {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
     a.button {
       display: inline-block;
       padding: 0.7rem 1.6rem;
@@ -46,6 +52,7 @@
       font-weight: 500;
       background: linear-gradient(135deg, rgba(79,70,229,0.95), rgba(236,72,153,0.9));
       box-shadow: 0 10px 25px rgba(79,70,229,0.6);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
     }
     a.button:hover {
       transform: translateY(-1px);
@@ -55,9 +62,12 @@
 </head>
 <body>
   <div class="card">
-    <h1>KiaSys</h1>
+    <h1>Киасис</h1>
     <p>Интеллектуальная система анализа микроструктуры и поддержки решений для управления качеством композиционных покрытий.</p>
-    <a href="index.ru.html" class="button">Перейти на сайт на русском</a>
+    <div class="buttons">
+      <a href="index.ru.html" class="button">Сайт на русском</a>
+      <a href="index.en.html" class="button">Site in English</a>
+    </div>
   </div>
 </body>
 </html>
