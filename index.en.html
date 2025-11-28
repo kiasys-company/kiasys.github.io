@@ -17,28 +17,38 @@
 <body class="bg-slate-950 text-slate-50">
   <!-- Header -->
   <header class="glass-header">
-    <div class="flex items-center gap-3">
-      <div class="logo-circle">
-        <span class="logo-letter">K</span>
-      </div>
-      <div>
-        <div class="font-semibold tracking-wide text-slate-50">KiaSys</div>
-        <div class="text-xs text-slate-300">Intelligent analysis & decision support</div>
-      </div>
+  <div class="flex items-center gap-3">
+    <div class="logo-circle">
+      <span class="logo-letter">K</span>
+    </div>
+    <div>
+      <div class="font-semibold tracking-wide text-slate-50">KiaSys</div>
+      <div class="text-xs text-slate-300">Intelligent analysis & decision support</div>
+    </div>
+  </div>
+
+  <nav class="hidden md:flex items-center gap-6 text-sm">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#for-whom" class="nav-link">Who it's for</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#workflow" class="nav-link">How it works</a>
+    <a href="#contacts" class="nav-link">Contacts</a>
+  </nav>
+
+  <div class="flex items-center gap-3">
+    <!-- Language switcher -->
+    <div class="lang-switcher hidden sm:flex items-center gap-1 text-xs">
+      <a href="index.ru.html" class="lang-pill">RU</a>
+      <span class="text-slate-400/80">/</span>
+      <a href="index.en.html" class="lang-pill lang-pill-active">EN</a>
     </div>
 
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="#hero" class="nav-link">Home</a>
-      <a href="#for-whom" class="nav-link">Who it's for</a>
-      <a href="#features" class="nav-link">Features</a>
-      <a href="#workflow" class="nav-link">How it works</a>
-      <a href="#contacts" class="nav-link">Contacts</a>
-    </nav>
-
     <a href="#contacts" class="hidden md:inline-flex px-3 py-1.5 text-xs rounded-full border border-violet-400/80 bg-violet-500/10 hover:bg-violet-500/20 transition">
-      Request a presentation
+      Contact us
     </a>
-  </header>
+  </div>
+</header>
+
 
   <main class="relative overflow-hidden">
     <!-- Background grid / gradient -->
